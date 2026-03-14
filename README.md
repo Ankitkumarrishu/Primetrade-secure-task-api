@@ -1,4 +1,4 @@
-# PrimeTrade AI – Scalable REST API & Full-Stack Portal
+# Secure Task Management REST API (Backend Developer Assignment)
 
 This project is a high-performance, secure, and scalable REST API built with Node.js, Express, and MongoDB, featuring a premium dark-themed frontend portal.
 
