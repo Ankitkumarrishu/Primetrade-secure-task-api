@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | PrimeTrade AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="background-radial"></div>
+
+    <div class="container">
+        <header class="dashboard-nav">
+            <div class="logo">PrimeTrade <span>AI</span></div>
+            <div class="user-info">
+                <div class="avatar" id="userAvatar">?</div>
+                <div>
+                    <p id="userName" style="font-weight: 600;">Loading...</p>
+                    <p id="userRole" style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;"></p>
+                </div>
+                <button id="logoutBtn" class="btn btn-icon" title="Logout">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                </button>
+            </div>
+        </header>
+
+        <main class="dashboard-grid">
+            <!-- Task Creation Sidebar -->
+            <aside class="task-form-card glass">
+                <h3 style="margin-bottom: 1.5rem;">New Task</h3>
+                <form id="taskForm">
+                    <div class="input-group">
+                        <label for="taskTitle">Task Title</label>
+                        <input type="text" id="taskTitle" placeholder="What needs to be done?" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="taskDesc">Description</label>
+                        <textarea id="taskDesc" rows="3" placeholder="Add more details..."></textarea>
+                    </div>
+                    <div class="input-group">
+                        <label for="taskPriority">Priority</label>
+                        <select id="taskPriority">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="saveTaskBtn">Create Task</button>
+                    <button type="button" class="btn" id="cancelEditBtn" style="display: none; margin-top: 0.5rem; background: rgba(255,255,255,0.05);">Cancel Edit</button>
+                </form>
+            </aside>
+
+            <!-- Task List Main Area -->
+            <section class="task-list-card glass">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                    <h3>My Tasks</h3>
+                    <div id="adminBadge" class="badge badge-completed" style="display: none;">Admin View</div>
+                </div>
+                <div id="taskList">
+                    <!-- Tasks will be injected here -->
+                    <p style="text-align: center; color: var(--text-muted); padding: 2rem;">Loading tasks...</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 PrimeTrade AI. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="message" style="position: fixed; bottom: 2rem; right: 2rem; width: auto; min-width: 250px; z-index: 100;"></div>
+
+    <script src="js/api.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
